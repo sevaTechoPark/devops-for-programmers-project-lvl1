@@ -10,3 +10,9 @@ services:
         source: ./
         target: /app
         read_only: true
+
+  production:
+    build:
+      context: ./
+      dockerfile: Dockerfile.production
+    container_name: production
