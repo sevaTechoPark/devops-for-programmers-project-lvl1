@@ -9,7 +9,6 @@ services:
       - type: bind
         source: ./
         target: /app
-        read_only: true
     depends_on:
       - db
 
