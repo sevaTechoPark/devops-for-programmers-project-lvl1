@@ -16,3 +16,4 @@ services:
       context: ./
       dockerfile: Dockerfile.production
     container_name: production
+    command: npm run test
