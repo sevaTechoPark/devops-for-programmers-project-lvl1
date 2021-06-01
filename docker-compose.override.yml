@@ -3,3 +3,16 @@ services:
   app:
     ports:
       - 8080:8080
+  caddy:
+    image: caddy:2.3.0-alpine
+    container_name: caddy
+    volumes:
+      - type: bind
+        source: ./services/caddy/Caddyfile
+        target: /etc/caddy/Caddyfile
+        read_only: true
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - app
