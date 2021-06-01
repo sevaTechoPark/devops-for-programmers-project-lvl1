@@ -10,7 +10,9 @@ export default async (app) => {
   app.config.cacheModules = false;
 
   app.config.db = {
-    type: 'sqljs',
-    location: 'db/development.sqlite',
+      type: process.env.NODOS_DB_TYPE,
+      hostname: process.env.NODOS_DB_HOSTNAME,
+      username: process.env.NODOS_DB_USERNAME,
+      password: process.env.NODOS_DB_PASSWORD,
   };
 };
